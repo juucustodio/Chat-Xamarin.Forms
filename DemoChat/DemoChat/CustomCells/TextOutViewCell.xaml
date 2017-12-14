@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoChat.CustomCells.TextOutViewCell">
+    <Grid ColumnSpacing="2" Padding="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="2"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0"  Grid.Column="1" CornerRadius="15">
+            <Frame.HasShadow>
+                <OnPlatform x:TypeArguments="x:Boolean" Android="true" iOS="false"/>
+            </Frame.HasShadow>
+            <Frame.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color" Android="White" iOS="#F5F5F5"/>
+            </Frame.BackgroundColor>
+
+            <StackLayout>
+                <Label TextColor="Black"  Text="{Binding Text}" />
+            </StackLayout>
+        </Frame>
+        <Label Grid.Row="1" FontSize="Micro" Grid.Column="1" HorizontalTextAlignment="End"  Text="{Binding MessageDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" TextColor="Gray"></Label>
+
+    </Grid>
+</ViewCell>

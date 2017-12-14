@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DemoChat;assembly=DemoChat"
+             xmlns:platformConfiguration="clr-namespace:Xamarin.Forms.PlatformConfiguration;assembly=Xamarin.Forms.Core"
+             x:Class="DemoChat.Views.MainPage" Title="Chat">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SelectorDataTemplate x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+     <Grid RowSpacing="0" ColumnSpacing="0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ListView 
+            x:Name="MessagesListView" 
+            ItemTemplate="{StaticResource MessageTemplateSelector}" 
+            ItemsSource="{Binding ListMessages}" 
+            HasUnevenRows="True" SeparatorVisibility="None" IsEnabled="True" Grid.Row="0"/>
+
+        
+        <StackLayout Orientation="Horizontal" Grid.Row="1" BackgroundColor="White" VerticalOptions="EndAndExpand">
+            <Entry 
+                HorizontalOptions="FillAndExpand"  
+                Placeholder="Message"  
+                Text="{Binding OutText}" Keyboard="Chat" Margin="4"/>
+                <Button 
+                Command="{Binding SendCommand}" Image="sendIcon.png" BackgroundColor="Transparent" WidthRequest="40" HeightRequest="40" Margin="4"/>
+            </StackLayout>
+
+    </Grid>
+   </ScrollView>
+</ContentPage>

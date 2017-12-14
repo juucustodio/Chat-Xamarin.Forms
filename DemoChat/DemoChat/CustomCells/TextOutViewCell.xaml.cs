@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace DemoChat
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace DemoChat.CustomCells
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class TextOutViewCell : ViewCell
     {
-        public MainPage()
+        public TextOutViewCell()
         {
             InitializeComponent();
         }

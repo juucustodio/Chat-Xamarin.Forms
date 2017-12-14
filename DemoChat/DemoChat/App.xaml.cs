@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace DemoChat
 {
@@ -13,7 +8,7 @@ namespace DemoChat
         {
             InitializeComponent();
 
-            MainPage = new DemoChat.MainPage();
+            MainPage = new NavigationPage(new Views.MainPage());
         }
 
         protected override void OnStart()
