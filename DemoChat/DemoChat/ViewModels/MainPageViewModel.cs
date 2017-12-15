@@ -31,6 +31,7 @@ namespace DemoChat.ViewModels
 
 
                     ListMessages.Add(message);
+                    OutText = "";
                 }
 
             });
